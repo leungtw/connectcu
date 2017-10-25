@@ -4,6 +4,7 @@ body {
   line-height: 1.5;
   padding: 0;
   margin: 0;
+  /* light grey */
   background-color: #f4f4f4;
 }
 
@@ -21,7 +22,8 @@ ul {
 
 .button_1 {
   height: 28px;
-  background-color: #e8491d;
+  /* yellow/gold */
+  background-color: #ffd700;
   border: 0;
   padding-left: 20px;
   padding-right: 20px;
@@ -31,12 +33,13 @@ ul {
 
 /*************** header ***************/
 header {
-  background-color: #35424a;
+  /* dark grey */
+  background-color: #303030;
   color: white;
   padding-top: 30px;
   min-height: 70px;
-  /* orange color */
-  border-bottom: #e8491d 3px solid;
+  /* yellow/gold */
+  border-bottom: #ffd700 3px solid;
 }
 
 header a {
@@ -67,8 +70,8 @@ header nav {
 }
 
 header .highlight, header .current a{
-  /* orange color */
-  color: #e8491d;
+  /* yellow/gold */
+  color: #ffd700;
   font-weight: bold;
 }
 
@@ -79,7 +82,8 @@ header a:hover {
 
 /********************** footer ***********************/
 footer {
-  background-color: #e8491d;
+  /* yellow/gold */
+  background-color: #ffd700;
   color: white;
   padding-top: 30px;
   min-height: 70px;
@@ -93,27 +97,36 @@ footer {
 #showcase {
   min-height: 400px;
   /* ../ goes out of the css class and we will go into the img folder */
-  background: url('../img/tutor.jpg') no-repeat 0 -300px;
-  background-size: cover;
+  background: url('../img/greytutor.png');
+  background-position: center;
+  background-size: 500px;
   text-align: center;
   color: black;
 
-  /* orange color */
-  border-bottom: #e8491d 3px solid;
+  /* yellow/gold */
+  border-bottom: #ffd700 3px solid;
 }
 
 #showcase h1 {
   font-size: 75px;
+  /* yellow/gold */
+  color: #ffd700;
   margin: 30px 130px 10px 130px;
+}
+
+#showcase h1 .highlight2 {
+  /* dark grey */
+  color: #303030;
 }
 
 #questionbar {
   padding: 15px;
   color: white;
-  background-color: #35424a;
+  /* dark grey */
+  background-color: #303030;
 
-  /* orange color */
-  border-bottom: #e8491d 3px solid;
+  /* yellow/gold color */
+  border-bottom: #ffd700 3px solid;
 }
 
 #questionbar h1 {
@@ -156,8 +169,8 @@ footer {
   margin: 10px auto 0 10px;
   font-size: 20px;
   text-align: center;
-  /* orange color */
-  background-color: #e8491d;
+  /* yellow/gold color */
+  background-color: #303030;
   color: white;
   border: none;
 }
@@ -169,6 +182,7 @@ footer {
   margin:15px auto 0 30px;
   font-size: 20px;
   text-align: right;
+  /*light grey */
   background-color: #f4f4f4;
   border: none;
   font-size: 16px;
@@ -177,9 +191,13 @@ footer {
 #text_areas .up {
   float:left;
   margin: 10px auto 0 30px;
+  /*yellow/gold */
+  background-color: #ffd700;
 }
 
 #text_areas .down {
   float: left;
   margin: 40px auto 0 -20px;
+  /*yellow/gold */
+  background-color: #ffd700;
 }
