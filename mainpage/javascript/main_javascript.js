@@ -181,49 +181,5 @@ function vDownVote10()
   iNumber -= 1;
   document.getElementById('txt10').value = String(iNumber);
 }
-function vSort()
-{
-  var textArray = [document.getElementById('ta1'), document.getElementById('ta2'),
-  document.getElementById('ta3'), document.getElementById('ta4'), document.getElementById('ta5'),
-  document.getElementById('ta6'), document.getElementById('ta7'), document.getElementById('ta8'),
-  document.getElementById('ta9'), document.getElementById('ta10')];
 
-  var subjectArray = [document.getElementById('txtSubject1'), document.getElementById('txtSubject2'),
-  document.getElementById('txtSubject3'), document.getElementById('txtSubject4'), document.getElementById('txtSubject5'),
-  document.getElementById('txtSubject6'), document.getElementById('txtSubject7'), document.getElementById('txtSubject8'),
-  document.getElementById('txtSubject9'), document.getElementById('txtSubject10')];
-
-  var voteArray = [document.getElementById('txt1'), document.getElementById('txt2'),
-  document.getElementById('txt3'), document.getElementById('txt4'), document.getElementById('txt5'),
-  document.getElementById('txt6'), document.getElementById('txt7'), document.getElementById('txt8'),
-  document.getElementById('txt9'), document.getElementById('txt10')];
-
-  //for loop to sort the data so that the highest amount of votes is on top of page
-  for (i = 0; i < voteArray.length - 1; i++)
-  {
-    var iMax = Number(voteArray[i].value);
-    for (j = i + 1; j < voteArray.length; j++)
-    {
-      var iValue = Number(voteArray[j].value);
-      if (iValue > iMax)
-      {
-        iMax = Number(voteArray[j].value);
-        iValue = Number(voteArray[i].value);
-
-        var tmpVote = voteArray[i].value;
-        voteArray[i].value = String(voteArray[j].value);
-        voteArray[j].value = String(tmpVote);
-
-        var tmpText = textArray[i].value;
-        textArray[i].value = String(textArray[j].value);
-        textArray[j].value = String(tmpText);
-
-        var tmpSubject = subjectArray[i].value;
-        subjectArray[i].value = String(subjectArray[j].value);
-        subjectArray[j].value = String(tmpSubject);
-      }
-    }
-  }
-
-}
 
