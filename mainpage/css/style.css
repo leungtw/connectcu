@@ -23,7 +23,7 @@ ul {
 .button_1 {
   height: 28px;
   /* yellow/gold */
-  background-color: #ffd700;
+  background-color: #cfb87c;
   border: 0;
   padding-left: 20px;
   padding-right: 20px;
@@ -39,7 +39,7 @@ header {
   padding-top: 30px;
   min-height: 70px;
   /* yellow/gold */
-  border-bottom: #ffd700 3px solid;
+  border-bottom: #cfb87c 3px solid;
 }
 
 header a {
@@ -71,7 +71,7 @@ header nav {
 
 header .highlight, header .current a{
   /* yellow/gold */
-  color: #ffd700;
+  color: #cfb87c;
   font-weight: bold;
 }
 
@@ -83,7 +83,7 @@ header a:hover {
 /********************** footer ***********************/
 footer {
   /* yellow/gold */
-  background-color: #ffd700;
+  background-color: #cfb87c;
   color: white;
   padding-top: 30px;
   min-height: 70px;
@@ -104,7 +104,7 @@ footer {
   color: black;
 
   /* yellow/gold */
-  border-bottom: #ffd700 3px solid;
+  border-bottom: #cfb87c 3px solid;
 }
 
 #showcase h1 {
@@ -126,7 +126,7 @@ footer {
   background-color: #303030;
 
   /* yellow/gold color */
-  border-bottom: #ffd700 3px solid;
+  border-bottom: #cfb87c 3px solid;
 }
 
 #questionbar h1 {
@@ -156,7 +156,7 @@ footer {
 }
 
 #text_areas textarea {
-  width: 600px;
+  width: 70%;
   display: block;
   margin: 25px 80px 15px auto;
   font-size: 20px;
@@ -192,12 +192,41 @@ footer {
   float:left;
   margin: 10px auto 0 30px;
   /*yellow/gold */
-  background-color: #ffd700;
+  background-color: #cfb87c;
 }
 
 #text_areas .down {
   float: left;
   margin: 40px auto 0 -20px;
   /*yellow/gold */
-  background-color: #ffd700;
+  background-color: #cfb87c;
+}
+
+
+/********************** collapsable list ***********************/
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 14px;
+    width: 70%;
+    height: 40px;
+
+
+  margin: 10px auto 0 10px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ccc; 
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
 }
