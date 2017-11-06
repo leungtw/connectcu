@@ -37,6 +37,10 @@
     <section id="questionbar">
       <div class="container">
         <h1> Ask a question </h1>
+          <form onsubmit="return false">
+          <select name="Subject" id="idSubject">
+            <option value="math"> Math </option>
+          </select>
           <input id="txtInput" type="text" placeholder="Enter Question">
           <button type="submit" class="button_1" onclick="return vPutValueIntoTextArea()"> Submit Question </button>
         </form>
@@ -46,72 +50,189 @@
     <section id="text_areas">
       <div class="container">
         <h1> Most Popular </h1>
-        <form>
+
+       <form>
           <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="">
           <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote1()">
           <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote1()">
           <input class="vote" type="text" id="txt1" value="0">
-          <textarea id="ta1" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject2" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up2" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote2()">
-          <img class="down" id="down2" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote2()">
-          <input class="vote" type="text" id="txt2" value="0" style="margin-top:18px">
-          <textarea id="ta2" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject3" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up3" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote3()">
-          <img class="down" id="down3" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote3()">
-          <input class="vote" type="text" id="txt3" value="0" style="margin-top:18px">
-          <textarea id="ta3" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject4" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up4" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote4()">
-          <img class="down" id="down4" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote4()">
-          <input class="vote" type="text" id="txt4" value="0" style="margin-top:18px">
-          <textarea id="ta4" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject5" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up5" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote5()">
-          <img class="down" id="down5" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote5()">
-          <input class="vote" type="text" id="txt5" value="0" style="margin-top:18px">
-          <textarea id="ta5" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject6" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up6" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote6()">
-          <img class="down" id="down6" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote6()">
-          <input class="vote" type="text" id="txt6" value="0" style="margin-top:18px">
-          <textarea id="ta6" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject7" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up7" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote7()">
-          <img class="down" id="down7" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote7()">
-          <input class="vote" type="text" id="txt7" value="0" style="margin-top:18px">
-          <textarea id="ta7" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject8" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up8" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote8()">
-          <img class="down" id="down8" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote8()">
-          <input class="vote" type="text" id="txt8" value="0" style="margin-top:18px">
-          <textarea id="ta8" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject9" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up9" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote9()">
-          <img class="down" id="down9" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote9()">
-          <input class="vote" type="text" id="txt9" value="0" style="margin-top:18px">
-          <textarea id="ta9" readonly="readonly" rows="3" cols="50"></textarea>
-
-          <input class="subject" type="text" id="txtSubject10" readonly="readonly" value="" style="margin-top:20px">
-          <img class="up" id="up10" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:18px" onclick="vUpVote10()">
-          <img class="down" id="down10" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" style="margin-top:48px" onclick="vDownVote10()">
-          <input class="vote" type="text" id="txt10" value="0" style="margin-top:18px">
-          <textarea id="ta10" readonly="readonly" rows="3" cols="50"></textarea>
         </form>
+          <button class="accordion" value=""><output id="ta1"></output> </button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <textarea id="comments1" readonly="readonly" rows="3" cols="50"></textarea>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject2" readonly="readonly" value="">
+          <img class="up" id="up2" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote2()">
+          <img class="down" id="down2" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote2()">
+          <input class="vote" type="text" id="txt2" value="0">
+        </form>
+          <button class="accordion"><output id="ta2"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments2" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject3" readonly="readonly" value="">
+          <img class="up" id="up3" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote3()">
+          <img class="down" id="down3" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote3()">
+          <input class="vote" type="text" id="txt3" value="0">
+        </form>
+          <button class="accordion"><output id="ta3"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments3" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject4" readonly="readonly" value="">
+          <img class="up" id="up4" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote4()">
+          <img class="down" id="down4" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote4()">
+          <input class="vote" type="text" id="txt4" value="0">
+        </form>
+          <button class="accordion"><output id="ta4"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments4" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject5" readonly="readonly" value="">
+          <img class="up" id="up5" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote5()">
+          <img class="down" id="down5" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote5()">
+          <input class="vote" type="text" id="txt5" value="0">
+        </form>
+          <button class="accordion"><output id="ta5"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments5" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject6" readonly="readonly" value="">
+          <img class="up" id="up6" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote6()">
+          <img class="down" id="down6" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote6()">
+          <input class="vote" type="text" id="txt6" value="0">
+        </form>
+          <button class="accordion"><output id="ta6"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments6" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject7" readonly="readonly" value="">
+          <img class="up" id="up7" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote7()">
+          <img class="down" id="down7" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote7()">
+          <input class="vote" type="text" id="txt7" value="0">
+        </form>
+          <button class="accordion"><output id="ta7"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments7" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject8" readonly="readonly" value="">
+          <img class="up" id="up8" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote8()">
+          <img class="down" id="down8" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote8()">
+          <input class="vote" type="text" id="txt8" value="0">
+        </form>
+          <button class="accordion"><output id="ta8"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments8" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject9" readonly="readonly" value="">
+          <img class="up" id="up9" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote9()">
+          <img class="down" id="down9" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote9()">
+          <input class="vote" type="text" id="txt9" value="0">
+        </form>
+          <button class="accordion"><output id="ta9"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments9" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+      <div class="container">
+        <form>
+          <input class="subject" type="text" id="txtSubject10" readonly="readonly" value="">
+          <img class="up" id="up10" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote10()">
+          <img class="down" id="down10" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote10()">
+          <input class="vote" type="text" id="txt10" value="0">
+        </form>
+          <button class="accordion"><output id="ta10"></output></button>
+          <div class="panel">
+            <p>Answers and Comments</p>
+            <form>
+            <textarea id="comments10" readonly="readonly" rows="3" cols="50"></textarea>
+        </form>
+          </div>
+      </div>
+
+
       </div>
     </section>
 
     <footer>
       <p> CUConnect, Copyright &copy; 2017 </p>
     </footer>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+</script>
+
+    
   </body>
 </html>
