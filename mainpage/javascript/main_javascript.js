@@ -41,145 +41,245 @@ function vPutValueIntoTextArea()
 //functions so when an arrow is clicked, it changes the vote
 function vUpVote1()
 {
-  strNumber = document.getElementById('txt1').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt1').value = String(iNumber);
+  if (document.getElementById('ta1').value != "")
+  {
+    strNumber = document.getElementById('txt1').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt1').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote2()
 {
-  strNumber = document.getElementById('txt2').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt2').value = String(iNumber);
+  if (document.getElementById('ta2').value != "")
+  {
+    strNumber = document.getElementById('txt2').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt2').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote3()
 {
-  strNumber = document.getElementById('txt3').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt3').value = String(iNumber);
+  if (document.getElementById('ta3').value != "")
+  {
+    strNumber = document.getElementById('txt3').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt3').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote4()
 {
-  strNumber = document.getElementById('txt4').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt4').value = String(iNumber);
+  if (document.getElementById('ta4').value != "")
+  {
+    strNumber = document.getElementById('txt4').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt4').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote5()
 {
-  strNumber = document.getElementById('txt5').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt5').value = String(iNumber);
+  if (document.getElementById('ta5').value != "")
+  {
+    strNumber = document.getElementById('txt5').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt5').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote6()
 {
-  strNumber = document.getElementById('txt6').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt6').value = String(iNumber);
+  if (document.getElementById('ta6').value != "")
+  {
+    strNumber = document.getElementById('txt6').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt6').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote7()
 {
-  strNumber = document.getElementById('txt7').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt7').value = String(iNumber);
+  if (document.getElementById('ta7').value != "")
+  {
+    strNumber = document.getElementById('txt7').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt7').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote8()
 {
-  strNumber = document.getElementById('txt8').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt8').value = String(iNumber);
+  if (document.getElementById('ta8').value != "")
+  {
+    strNumber = document.getElementById('txt8').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt8').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote9()
 {
-  strNumber = document.getElementById('txt9').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt9').value = String(iNumber);
+  if (document.getElementById('ta9').value != "")
+  {
+    strNumber = document.getElementById('txt9').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt9').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vUpVote10()
 {
-  strNumber = document.getElementById('txt10').value;
-  iNumber = Number(strNumber);
-  iNumber += 1;
-  document.getElementById('txt10').value = String(iNumber);
+  if (document.getElementById('ta10').value != "")
+  {
+    strNumber = document.getElementById('txt10').value;
+    iNumber = Number(strNumber);
+    iNumber += 1;
+    document.getElementById('txt10').value = String(iNumber);
+  }
+
+  vSort();
 }
 
 //all of the functions for down arrow
 function vDownVote1()
 {
-  strNumber = document.getElementById('txt1').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt1').value = String(iNumber);
+  if (document.getElementById('ta1').value != "")
+  {
+    strNumber = document.getElementById('txt1').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt1').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote2()
 {
-  strNumber = document.getElementById('txt2').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt2').value = String(iNumber);
+  if (document.getElementById('ta2').value != "")
+  {
+    strNumber = document.getElementById('txt2').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt2').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote3()
 {
-  strNumber = document.getElementById('txt3').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt3').value = String(iNumber);
+  if (document.getElementById('ta3').value != "")
+  {
+    strNumber = document.getElementById('txt3').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt3').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote4()
 {
-  strNumber = document.getElementById('txt4').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt4').value = String(iNumber);
+  if (document.getElementById('ta4').value != "")
+  {
+    strNumber = document.getElementById('txt4').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt4').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote5()
 {
-  strNumber = document.getElementById('txt5').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt5').value = String(iNumber);
+  if (document.getElementById('ta5').value != "")
+  {
+    strNumber = document.getElementById('txt5').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt5').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote6()
 {
-  strNumber = document.getElementById('txt6').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt6').value = String(iNumber);
+  if (document.getElementById('ta6').value != "")
+  {
+    strNumber = document.getElementById('txt6').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt6').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote7()
 {
-  strNumber = document.getElementById('txt7').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt7').value = String(iNumber);
+  if (document.getElementById('ta7').value != "")
+  {
+    strNumber = document.getElementById('txt7').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt7').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote8()
 {
-  strNumber = document.getElementById('txt8').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt8').value = String(iNumber);
+  if (document.getElementById('ta8').value != "")
+  {
+    strNumber = document.getElementById('txt8').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt8').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote9()
 {
-  strNumber = document.getElementById('txt9').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt9').value = String(iNumber);
+  if (document.getElementById('ta9').value != "")
+  {
+    strNumber = document.getElementById('txt9').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt9').value = String(iNumber);
+  }
+
+  vSort();
 }
 function vDownVote10()
 {
-  strNumber = document.getElementById('txt10').value;
-  iNumber = Number(strNumber);
-  iNumber -= 1;
-  document.getElementById('txt10').value = String(iNumber);
+  if (document.getElementById('ta10').value != "")
+  {
+    strNumber = document.getElementById('txt10').value;
+    iNumber = Number(strNumber);
+    iNumber -= 1;
+    document.getElementById('txt10').value = String(iNumber);
+  }
+
+  vSort();
 }
 
 function vSort()
@@ -200,7 +300,7 @@ function vSort()
   document.getElementById('txt9'), document.getElementById('txt10')];
 
   //for loop to sort the data so that the highest amount of votes is on top of page
-  for (i = 0; i < voteArray.length - 1; i++)
+  for (i = 0; i < voteArray.length; i++)
   {
     var iMax = Number(voteArray[i].value);
     for (j = i + 1; j < voteArray.length; j++)
@@ -227,5 +327,6 @@ function vSort()
   }
 
 }
+
 
 
