@@ -40,6 +40,8 @@ header {
   min-height: 70px;
   /* yellow/gold */
   border-bottom: #cfb87c 3px solid;
+  width: 100%;
+  min-width: 1160px;
 }
 
 header a {
@@ -87,6 +89,7 @@ footer {
   color: white;
   padding-top: 30px;
   min-height: 70px;
+  min-width: 1160px;
   text-align: center;
 
   border-bottom: black 3px solid;
@@ -96,37 +99,41 @@ footer {
 /******************** showcase **********************/
 #showcase {
   min-height: 400px;
+  min-width: 1160px;
   /* ../ goes out of the css class and we will go into the img folder */
-  background: url('../img/greytutor.png');
+  background: url('../img/main.jpg');
+  background-repeat:no-repeat;
   background-position: center;
-  background-size: 500px;
+  background-size: cover;
   text-align: center;
   color: black;
-
-  /* yellow/gold */
-  border-bottom: #cfb87c 3px solid;
 }
 
 #showcase h1 {
   font-size: 75px;
   /* yellow/gold */
-  color: #ffd700;
+  color: #cfb87c;
   margin: 30px 130px 10px 130px;
 }
 
 #showcase h1 .highlight2 {
   /* dark grey */
-  color: #303030;
+  /* color: #303030; */
+  color: black;
 }
 
 #questionbar {
   padding: 15px;
   color: white;
+  min-width: 1130px;
+  /* width: 100%;*/
   /* dark grey */
   background-color: #303030;
 
   /* yellow/gold color */
   border-bottom: #cfb87c 3px solid;
+  /* yellow/gold */
+  border-top: #cfb87c 3px solid;
 }
 
 #questionbar h1 {
@@ -136,18 +143,22 @@ footer {
 #questionbar form {
   float:right;
   margin-top: 25px;
+  margin-right: 0px;
+  width: 75%;
 }
 
 #questionbar #txtInput {
   padding: 2px;
   height: 20px;
-  width: 500px;
+  /* width: 500px; */
+  width: 65%;
 }
 
 #questionbar select {
   padding: 2px;
   height: 30px;
-  width: 130px;
+  /* width: 130px; */
+  width: 10%;
 }
 
 #text_areas h1 {
@@ -202,6 +213,11 @@ footer {
   background-color: #cfb87c;
 }
 
+#text_areas  .panel {
+  width: 75%;
+  margin: auto 0px auto 210px;
+}
+
 
 /********************** collapsable list ***********************/
 button.accordion {
@@ -222,7 +238,7 @@ button.accordion {
 }
 
 button.accordion.active, button.accordion:hover {
-    background-color: #ccc; 
+    background-color: #ccc;
 }
 
 div.panel {
@@ -230,3 +246,4 @@ div.panel {
     display: none;
     background-color: white;
 }
+
