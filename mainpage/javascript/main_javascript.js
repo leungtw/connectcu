@@ -328,5 +328,21 @@ function vSort()
 
 }
 
+/*function vAddComments(divName)
+{
+  var newDiv = document.createElement('div');
+  newDiv.innerHTML = "<input id='txtInput' type='text' placeholder='Enter Answer or Comment' style='width: 75%'> <button type='submit' class='button_1' onclick='return vAddComments(comments1)' style='width: 10%;'> Submit </button>";
+  document.getElementById(divName).appendChild(newDiv);
+}*/
+function vAddComments(divName)
+{
+  var newInput = document.createElement("input");
+  newInput.type = "text";
+  newInput.placeholder = "Enter Answer or Comment";
+  newInput.style = "width: 75%; margin: 5px 0 5px 0";
+  divName.appendChild(newInput);
+}
+
+
 
 
