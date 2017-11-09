@@ -299,6 +299,12 @@ function vSort()
   document.getElementById('txt6'), document.getElementById('txt7'), document.getElementById('txt8'),
   document.getElementById('txt9'), document.getElementById('txt10')];
 
+  var divArray = ['form1', 'form2', 'form3', 'form4', 'form5', 'form6',
+   'form7', 'form8', 'form9', 'form10',]
+
+  var divArray2 = ['#form1', '#form2', '#form3', '#form4', '#form5', '#form6',
+   '#form7', '#form8', '#form9', '#form10']
+
   //for loop to sort the data so that the highest amount of votes is on top of page
   for (i = 0; i < voteArray.length; i++)
   {
@@ -308,6 +314,9 @@ function vSort()
       var iValue = Number(voteArray[j].value);
       if (iValue > iMax)
       {
+        var tmp = divArray2[i].attributes;
+        divArray[i].attributes = divArray[j].attributes;
+        divArray[j].attributes = tmp;
         iMax = Number(voteArray[j].value);
         iValue = Number(voteArray[i].value);
 
@@ -322,18 +331,25 @@ function vSort()
         var tmpSubject = subjectArray[i].value;
         subjectArray[i].value = String(subjectArray[j].value);
         subjectArray[j].value = String(tmpSubject);
+
+        var i1 = $(divArray2[i]);
+        var i2 = $(divArray2[j]);
+
+        var clone1 = i1.clone();
+        var clone2 = i2.clone();
+
+        (i1).replaceWith((clone2));
+        (i2).replaceWith((clone1));
+
+        $(divArray2[i]).attr("id", divArray[j]);
+        $(divArray2[j]).attr("id", divArray[i]);
+
       }
     }
   }
 
 }
 
-/*function vAddComments(divName)
-{
-  var newDiv = document.createElement('div');
-  newDiv.innerHTML = "<input id='txtInput' type='text' placeholder='Enter Answer or Comment' style='width: 75%'> <button type='submit' class='button_1' onclick='return vAddComments(comments1)' style='width: 10%;'> Submit </button>";
-  document.getElementById(divName).appendChild(newDiv);
-}*/
 function vAddComments(divName)
 {
   var newInput = document.createElement("input");
@@ -342,6 +358,7 @@ function vAddComments(divName)
   newInput.style = "width: 75%; margin: 5px 0 5px 0";
   divName.appendChild(newInput);
 }
+
 
 
 
