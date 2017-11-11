@@ -101,7 +101,7 @@ footer {
   min-height: 400px;
   min-width: 1160px;
   /* ../ goes out of the css class and we will go into the img folder */
-  background: url('../img/main.jpg');
+  background: url('../img/MainLogo.jpg');
   background-repeat:no-repeat;
   background-position: center;
   background-size: cover;
