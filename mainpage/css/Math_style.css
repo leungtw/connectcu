@@ -1,0 +1,249 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  /* light grey */
+  background-color: #f4f4f4;
+}
+
+/************** globals ***************/
+.container {
+  width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.button_1 {
+  height: 28px;
+  /* yellow/gold */
+  background-color: #cfb87c;
+  border: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  margin-left: 10px;
+}
+
+/*************** header ***************/
+header {
+  /* dark grey */
+  background-color: #303030;
+  color: white;
+  padding-top: 30px;
+  min-height: 70px;
+  /* yellow/gold */
+  border-bottom: #cfb87c 3px solid;
+  width: 100%;
+  min-width: 1160px;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header li {
+  float: left;
+  display: inline;
+  /* padding goes top, right, bottem, left. so right and left are set to 20px */
+  padding: 0 20px 0 20px;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+header .highlight, header .current a{
+  /* yellow/gold */
+  color: #cfb87c;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: grey;
+  font-weight: bold;
+}
+
+/********************** footer ***********************/
+footer {
+  /* yellow/gold */
+  background-color: #cfb87c;
+  color: white;
+  padding-top: 30px;
+  min-height: 70px;
+  min-width: 1160px;
+  text-align: center;
+
+  border-bottom: black 3px solid;
+  border-top: black 3px solid;
+}
+
+/******************** showcase **********************/
+#showcase {
+  min-height: 400px;
+  min-width: 1160px;
+  /* ../ goes out of the css class and we will go into the img folder */
+  background: url('../img/MathLogo.jpg');
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: black;
+}
+
+#showcase h1 {
+  font-size: 75px;
+  /* yellow/gold */
+  color: #cfb87c;
+  margin: 30px 130px 10px 130px;
+}
+
+#showcase h1 .highlight2 {
+  /* dark grey */
+  /* color: #303030; */
+  color: black;
+}
+
+#questionbar {
+  padding: 15px;
+  color: white;
+  min-width: 1130px;
+  /* width: 100%;*/
+  /* dark grey */
+  background-color: #303030;
+
+  /* yellow/gold color */
+  border-bottom: #cfb87c 3px solid;
+  /* yellow/gold */
+  border-top: #cfb87c 3px solid;
+}
+
+#questionbar h1 {
+  float:left;
+}
+
+#questionbar form {
+  float:right;
+  margin-top: 25px;
+  margin-right: 0px;
+  width: 75%;
+}
+
+#questionbar #txtInput {
+  padding: 2px;
+  height: 20px;
+  /* width: 500px; */
+  width: 65%;
+}
+
+#questionbar select {
+  padding: 2px;
+  height: 30px;
+  /* width: 130px; */
+  width: 10%;
+}
+
+#text_areas h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+#text_areas textarea {
+  width: 70%;
+  display: block;
+  margin: 25px 80px 15px auto;
+  font-size: 20px;
+}
+
+#text_areas .vote {
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin: 10px auto 0 10px;
+  font-size: 20px;
+  text-align: center;
+  /* yellow/gold color */
+  background-color: #303030;
+  color: white;
+  border: none;
+}
+
+#text_areas .subject {
+  height: 30px;
+  width: 150px;
+  float:left;
+  margin:15px auto 0 30px;
+  font-size: 20px;
+  text-align: right;
+  /*light grey */
+  background-color: #f4f4f4;
+  border: none;
+  font-size: 16px;
+}
+
+#text_areas .up {
+  float:left;
+  margin: 10px auto 0 30px;
+  /*yellow/gold */
+  background-color: #cfb87c;
+}
+
+#text_areas .down {
+  float: left;
+  margin: 40px auto 0 -20px;
+  /*yellow/gold */
+  background-color: #cfb87c;
+}
+
+#text_areas  .panel {
+  width: 75%;
+  margin: auto 0px auto 210px;
+}
+
+
+/********************** collapsable list ***********************/
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 14px;
+    width: 70%;
+    height: 40px;
+
+
+  margin: 10px auto 0 10px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ccc;
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
+
