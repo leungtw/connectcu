@@ -24,11 +24,12 @@
             <li> <a href="computerscience.html"> Computer Science </a>  </li>
             <li> <a href="science.html"> Science </a>  </li>
             <li> <a href="english.html"> English </a>  </li>
+            <a href="Login.html" class="loginbtn">Login</a>
+            <a href="SignUp.html" class="loginbtn">Sign Up</a>
           </ul>
         </nav>
       </div>
     </header>
-
     <section id="showcase">
       <div class="container">
         
@@ -268,10 +269,22 @@ for (i = 0; i < acc.length; i++) {
         }
     }
 }
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
 
 
 
   </body>
 </html>
+
+
 
