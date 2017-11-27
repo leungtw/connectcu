@@ -19,19 +19,20 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="mainpage.html"> Home </a> </li>
-            <li> <a href="math.html"> Math </a> </li>
-            <li> <a href="computerscience.html"> Computer Science </a>  </li>
-            <li class="current"> <a href="science.html"> Science </a>  </li>
-            <li> <a href="english.html"> English </a>  </li>
+            <li> <a href="index.php"> Home </a> </li>
+            <li> <a href="math.php"> Math </a> </li>
+            <li> <a href="computerscience.php"> Computer Science </a>  </li>
+            <li class="current"> <a href="science.php"> Science </a>  </li>
+            <li> <a href="english.php"> English </a>  </li>
+            <li class="button_1"> <a href="Login.php" >Login</a> </li>
+            <li class="button_1"> <a href="SignUp.php">Sign Up</a> </li>
           </ul>
         </nav>
       </div>
     </header>
-
     <section id="showcase">
       <div class="container">
-
+        
 
       </div>
     </section>

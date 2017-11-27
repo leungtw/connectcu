@@ -80,7 +80,7 @@ button {
     <div class="clearfix">
 </form>
     <button type="submit" class="signupbtn">Sign Up</button>
-    <a href="mainpage.html">
+    <a href="index.php">
     <input type="button" class="cancelbtn" value="Cancel" />
     </a>
     </div>

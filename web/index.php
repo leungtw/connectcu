@@ -12,6 +12,20 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
+	<?php
+		//$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+		//$server = $url["host"];
+		//$username = $url["user"];
+		//$password = $url["pass"];
+		//$db = substr($url["path"], 1);
+
+		//$conn = new mysqli($server, $username, $password, $db);
+		
+		//if ($link->connect_error){
+			//die('Could not connect: ' . $link->connect_error);
+		//}
+	?>
     <header>
       <div class="container">
         <div id="branding">
