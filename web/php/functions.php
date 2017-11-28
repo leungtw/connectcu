@@ -9,7 +9,6 @@ function sqlConnect(){
 	$username = $url["user"];
 	$password = $url["pass"];
 	$db = substr($url["path"], 1);
-	*/
 	
 	// USE THIS FOR CONNECTING LOCALLY (For testing)
 	/*
