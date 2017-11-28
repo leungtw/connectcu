@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Get help from other students in the same class as you">
-    <meta name="keywords" content="connect cu, study groups, get help with homework">
-    <meta name="author" content="Group 2">
-    <title>CUConnect | Welcome</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script type="text/javascript" src="./javascript/main_javascript.js"> </script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  </head>
-  <body>
 	<?php
-		//$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-		//$server = $url["host"];
-		//$username = $url["user"];
-		//$password = $url["pass"];
-		//$db = substr($url["path"], 1);
-
-		//$conn = new mysqli($server, $username, $password, $db);
-		
-		//if ($link->connect_error){
-			//die('Could not connect: ' . $link->connect_error);
-		//}
+		require_once('php/functions.php');
+		$conn = sqlConnect();
 	?>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="description" content="Get help from other students in the same class as you">
+			<meta name="keywords" content="connect cu, study groups, get help with homework">
+			<meta name="author" content="Group 2">
+			<title>CUConnect | Welcome</title>
+			<link rel="stylesheet" href="./css/style.css">
+			<script type="text/javascript" src="./javascript/main_javascript.js"> </script>
+			<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	</head>
+	<body>
     <header>
       <div class="container">
         <div id="branding">
@@ -54,21 +44,51 @@
     <section id="questionbar">
       <div class="container">
         <h1> Ask a question </h1>
-        <form onsubmit="return false">
-          <select name="Subject" id="idSubject">
-            <option value="math"> Math </option>
-            <option value="computerscience"> Computer Science </option>
-            <option value="science"> Science </option>
-            <option value="english"> English </option>
+        <form action="php/inputHandler.php" method="post">
+          <select name="Subject" id="idSubject" required>
+            <option value="Math"> Math </option>
+            <option value="Computer Science"> Computer Science </option>
+            <option value="Science"> Science </option>
+            <option value="English"> English </option>
           </select>
-          <input id="txtInput" type="text" placeholder="Enter Question">
-          <button type="submit" class="button_1" onclick="return vPutValueIntoTextArea()"> Submit Question </button>
+          <input name="Question" id="txtInput" type="text" placeholder="Enter Question" required>
+		  <input name="User" style="margin:5px" id="txtInput" type="text" placeholder="Enter Your Name" required>
+		  <!-- onclick="return vPutValueIntoTextArea"-->
+          <input class="button_1" type="submit" value="Submit Question"/>
         </form>
       </div>
     </section>
 
     <section id="text_areas">
         <h1> Most Popular </h1>
+		<?php
+			//Queries questions table, then creates a block for each of the top 15 questions, and fills info
+			$sql = "SELECT message, subject, score, user FROM questions ORDER BY score DESC LIMIT 15;";
+			$result = $conn->query($sql);//$row['title']
+			while($row = $result->fetch_array()){
+				echo '
+				<div class="container" id="container">
+				<form>
+				  <input class="subject" type="text" id="txtSubject" readonly="readonly" value="'.$row['subject'].'">
+				  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote1()">
+				  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote1()">
+				  <input class="vote" type="text" id="txt1" value="'.$row['score'].'">
+				</form>
+				  <button class="accordion" value=""><output id="">'.$row['message'].'</output> </button>
+				  <div class="panel">
+					<p>Answers and Comments</p>
+					<form id="form1" onsubmit="return false">
+					  <div id="comments1">
+						<input id="txtInput" name="myInputs1[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
+					  </div>
+						<button type="submit" class="button_1" onclick="return vAddComments(comments1)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
+					</form>
+				  </div>
+				<p style="float:right">Asked by '.$row['user'].'</p>
+				</div>';
+			}
+		?>
+		<!--
         <div class="container" id="container1">
         <form>
           <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="">
@@ -260,7 +280,9 @@
       </div>
 
       </div>
+	  -->
     </section>
+	
 
     <footer>
       <p> CUConnect, Copyright &copy; 2017 </p>
