@@ -52,8 +52,7 @@
             <option value="English"> English </option>
           </select>
           <input name="Question" id="txtInput" type="text" placeholder="Enter Question" required>
-		  <input name="User" style="margin:5px" id="txtInput" type="text" placeholder="Enter Your Name" required>
-		  <!-- onclick="return vPutValueIntoTextArea"-->
+		  <input name="User" style="margin-top:4px" id="txtInput" type="text" placeholder="Enter Your Name" required>
           <input class="button_1" type="submit" value="Submit Question"/>
         </form>
       </div>
@@ -67,12 +66,12 @@
 			$result = $conn->query($sql);//$row['title']
 			while($row = $result->fetch_array()){
 				echo '
-				<div class="container" id="container">
+				<div class="container" id="container1">
 				<form>
-				  <input class="subject" type="text" id="txtSubject" readonly="readonly" value="'.$row['subject'].'">
+				  <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="'.$row['subject'].'">
 				  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote1()">
 				  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote1()">
-				  <input class="vote" type="text" id="txt1" value="'.$row['score'].'">
+				  <input class="vote" type="text" id="txt1" value="'.$row['score'].'" readonly>
 				</form>
 				  <button class="accordion" value=""><output id="">'.$row['message'].'</output> </button>
 				  <div class="panel">

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<?php
+		require_once('php/functions.php');
+		$conn = sqlConnect();
+	?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -39,21 +43,46 @@
     <section id="questionbar">
       <div class="container">
         <h1> Ask a question </h1>
-        <form onsubmit="return false">
-          <select name="Subject" id="idSubject">
-            <option value="math"> Math </option>
-            <option value="computerscience"> Computer Science </option>
-            <option value="science"> Science </option>
-            <option value="english"> English </option>
-          </select>
-          <input id="txtInput" type="text" placeholder="Enter Question">
-          <button type="submit" class="button_1" onclick="return vPutValueIntoTextArea()"> Submit Question </button>
+        <form action="php/inputHandler.php" method="post">
+			<input name="Subject" type="hidden" value="Computer Science">
+			<input name="Question" id="txtInput" type="text" placeholder="Enter Question" required>
+			<input name="User" style="margin-top:4px;" id="txtInput" type="text" placeholder="Enter Your Name" required>
+			<input class="button_1" type="submit" value="Submit Question"/>
+			<input name="Return" type="hidden" value="computerscience.php">
         </form>
       </div>
     </section>
 
     <section id="text_areas">
         <h1> Most Popular </h1>
+		<?php
+			//Queries questions table, then creates a block for each of the top 15 questions, and fills info
+			$sql = "SELECT message, subject, score, user FROM questions WHERE subject='Computer Science' ORDER BY score DESC LIMIT 15;";
+			$result = $conn->query($sql);//$row['title']
+			while($row = $result->fetch_array()){
+				echo '
+				<div class="container" id="container">
+				<form>
+				  <input class="subject" type="text" id="txtSubject" readonly="readonly" value="'.$row['subject'].'">
+				  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote1()">
+				  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote1()">
+				  <input class="vote" type="text" id="txt1" value="'.$row['score'].'">
+				</form>
+				  <button class="accordion" value=""><output id="">'.$row['message'].'</output> </button>
+				  <div class="panel">
+					<p>Answers and Comments</p>
+					<form id="form1" onsubmit="return false">
+					  <div id="comments1">
+						<input id="txtInput" name="myInputs1[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
+					  </div>
+						<button type="submit" class="button_1" onclick="return vAddComments(comments1)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
+					</form>
+				  </div>
+				<p style="float:right">Asked by '.$row['user'].'</p>
+				</div>';
+			}
+		?>
+		<!--
         <div class="container" id="container1">
         <form>
           <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="">
@@ -245,6 +274,7 @@
       </div>
 
       </div>
+	  -->
     </section>
 
     <footer>

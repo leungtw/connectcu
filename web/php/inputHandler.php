@@ -2,6 +2,7 @@
 	require_once('functions.php');
 	$conn = sqlConnect();
 	
+	$returnPage = $_POST['Return'];
 	$subject = $_POST['Subject'];
 	$question = $_POST['Question'];
 	$user = $_POST['User'];
@@ -11,5 +12,5 @@
 		die('Error!');
 	}
 	
-	header("Location: ../index.php?msg=1");
+	header("Location: ../$returnPage?msg=1");
 ?>
