@@ -1,7 +1,8 @@
 <?php
 
 function sqlConnect(){
-	/* USE THIS FOR CONNECTING OVER HEROKU
+	/* USE THIS FOR CONNECTING OVER HEROKU */
+
 	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 	$server = $url["host"];
@@ -11,10 +12,12 @@ function sqlConnect(){
 	*/
 	
 	// USE THIS FOR CONNECTING LOCALLY (For testing)
+	/*
 	$server = "localhost";
 	$username = "root";
 	$password = "";
 	$db = "connectcu";
+	*/
 	
 	$conn = new mysqli($server, $username, $password, $db);
 	
