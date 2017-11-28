@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<?php
-		//require_once('php/functions.php');
-		//$conn = sqlConnect();
+		require_once('php/functions.php');
+		$conn = sqlConnect();
 	?>
 	<head>
 		<meta charset="utf-8">
