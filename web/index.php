@@ -87,8 +87,7 @@
 				  </div>
 				<p style="float:right">Asked by '.$row['user'].'</p>
 				</div>';
-        */
-			}
+			}*/
 		?>
 		<!--
         <div class="container" id="container1">
