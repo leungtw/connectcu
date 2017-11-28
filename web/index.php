@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<?php
-		require_once('php/functions.php');
-		$conn = sqlConnect();
+		//require_once('php/functions.php');
+		//$conn = sqlConnect();
 	?>
 	<head>
 		<meta charset="utf-8">
@@ -62,6 +62,7 @@
     <section id="text_areas">
         <h1> Most Popular </h1>
 		<?php
+      /*
 			//Queries questions table, then creates a block for each of the top 15 questions, and fills info
 			$sql = "SELECT message, subject, score, user FROM questions ORDER BY score DESC LIMIT 15;";
 			$result = $conn->query($sql);//$row['title']
@@ -86,6 +87,7 @@
 				  </div>
 				<p style="float:right">Asked by '.$row['user'].'</p>
 				</div>';
+        */
 			}
 		?>
 		<!--
