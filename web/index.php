@@ -44,7 +44,7 @@
     <section id="questionbar">
       <div class="container">
         <h1> Ask a question </h1>
-        <form action="php/inputHandler.php" method="post">
+        <form action="php/questionHandler.php" method="post">
           <select name="Subject" id="idSubject" required>
             <option value="Math"> Math </option>
             <option value="Computer Science"> Computer Science </option>
@@ -54,6 +54,7 @@
           <input name="Question" id="txtInput" type="text" placeholder="Enter Question" required>
 		  <input name="User" style="margin-top:4px" id="txtInput" type="text" placeholder="Enter Your Name" required>
           <input class="button_1" type="submit" value="Submit Question"/>
+		  <input name="Return" type="hidden" value="index.php">
         </form>
       </div>
     </section>
@@ -62,28 +63,57 @@
         <h1> Most Popular </h1>
 		<?php
 			//Queries questions table, then creates a block for each of the top 15 questions, and fills info
-			$sql = "SELECT message, subject, score, user FROM questions ORDER BY score DESC LIMIT 15;";
-			$result = $conn->query($sql);//$row['title']
-			while($row = $result->fetch_array()){
+			$sql = "SELECT * from questions q LEFT JOIN (SELECT message AS answer, user AS ansUser, question_id FROM answers) a ON q.id = a.question_id";
+			$result = $conn->query($sql);
+			
+			$array = array();
+			while ($row = $result->fetch_array()){
+				$array[$row['id']][] = $row;
+			}
+			
+			foreach ($array as $id => $rows_for_id){
 				echo '
 				<div class="container" id="container1">
-				<form>
-				  <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="'.$row['subject'].'">
-				  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote1()">
-				  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote1()">
-				  <input class="vote" type="text" id="txt1" value="'.$row['score'].'" readonly>
-				</form>
-				  <button class="accordion" value=""><output id="">'.$row['message'].'</output> </button>
-				  <div class="panel">
-					<p>Answers and Comments</p>
-					<form id="form1" onsubmit="return false">
-					  <div id="comments1">
-						<input id="txtInput" name="myInputs1[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-					  </div>
-						<button type="submit" class="button_1" onclick="return vAddComments(comments1)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
+					<form>
+					  <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="'.$rows_for_id[0]['subject'].'">
+					  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote1()">
+					  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote1()">
+					  <input class="vote" type="text" id="txt1" value="'.$rows_for_id[0]['score'].'" readonly>
 					</form>
-				  </div>
-				<p style="float:right">Asked by '.$row['user'].'</p>
+					  <button class="accordion" value=""><output id="">'.$rows_for_id[0]['message'].'</output> </button>
+					  <div class="panel">
+						<h3>Answers</h3>';
+						$counter = 0;
+						foreach ($rows_for_id as $answer){
+							if ($answer['answer'] != NULL){
+								echo '
+								<div class="commentContainer">
+									<p>'.$answer['answer'].'</p>
+									<div align="right">
+									<p>Answered by '.$answer['ansUser'].'</p>
+									</div>
+								</div>';
+								$counter += 1;
+							}
+						}
+						
+						if ($counter == 0){
+							echo '<p>Nobody has answered this question yet!</p>';
+						}
+						
+						echo
+						'<h3> Answer This Question:</h3>
+						<div class="commentBar">
+							<form action="php/commenthandler.php" method="post" id="form1">
+								<input name="Message" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0" required>
+								<input name="User" type="text" placeholder="Enter Your Name" style="width: 75%; margin: 0 0 5px 0" required>
+								<input name="Return" type="hidden" value="index.php">
+								<input name="Qid" type="hidden" value="'.$rows_for_id[0]['id'].'">
+								<input type="submit" class="button_1" value="Submit" style="width: 10%; margin: 10px 0 10px 0">
+							</form>
+						</div>
+					  </div>
+					<p style="float:right">Asked by '.$rows_for_id[0]['user'].'</p>
 				</div>';
 			}
 		?>

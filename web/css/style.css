@@ -142,7 +142,7 @@ footer {
 
 #questionbar form {
   float:right;
-  margin-top: 25px;
+  margin-top: 5px;
   margin-right: 0px;
   width: 75%;
 }
@@ -215,7 +215,7 @@ footer {
 
 #text_areas  .panel {
   width: 75%;
-  margin: auto 0px auto 210px;
+  margin: 1em 0px auto 210px;
 }
 
 
@@ -245,6 +245,9 @@ div.panel {
     padding: 0 18px;
     display: none;
     background-color: #fff;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	border-bottom: 2px solid #bbb;
 }
 
 .loginbtn {
@@ -257,5 +260,22 @@ div.panel {
     text-decoration: none;
     color: initial;
     
+}
+
+.commentContainer {
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	margin: 1em;
+	padding: 0 1em 0 1em;
+	background-color: #ccc;
+	border-bottom: 2px solid #bbb;
+	
+}
+
+.commentBar {
+	background-color: #ccc;
+	border-top: 6px solid #cfb87c;
+	margin: 0 -18px 0 -18px;
+	padding: 1em;
 }
 
