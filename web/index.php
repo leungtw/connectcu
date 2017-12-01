@@ -104,7 +104,7 @@
 						echo
 						'<h3> Answer This Question:</h3>
 						<div class="commentBar">
-							<form action="php/commenthandler.php" method="post" id="form1">
+							<form action="php/commentHandler.php" method="post" id="form1">
 								<input name="Message" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0" required>
 								<input name="User" type="text" placeholder="Enter Your Name" style="width: 75%; margin: 0 0 5px 0" required>
 								<input name="Return" type="hidden" value="index.php">
