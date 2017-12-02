@@ -61,7 +61,7 @@ button {
 
 <h2>Create your account</h2>
 
-<form action="/action_page.php" style="border:1px solid #ccc">
+<form action="php/signupHandler.php" style="border:1px solid #ccc">
   <div class="container">
     <label><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
@@ -69,11 +69,13 @@ button {
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
 
+<!--
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
     <label><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+-->
     <input type="checkbox" checked="checked"> Remember me
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
