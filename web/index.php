@@ -10,7 +10,7 @@
 		<meta name="description" content="Get help from other students in the same class as you">
 			<meta name="keywords" content="connect cu, study groups, get help with homework">
 			<meta name="author" content="Group 2">
-			<title>ConnectCU | Welcome</title>
+			<title>CUConnect | Welcome</title>
 			<link rel="stylesheet" href="./css/style.css">
 			<script type="text/javascript" src="./javascript/main_javascript.js"> </script>
 			<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
