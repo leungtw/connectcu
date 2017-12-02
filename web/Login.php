@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <style>
+
+body{
+    background-image: url("../web/img/Login.jpg");
+}
+
 form {
     border: 3px solid #cfb87c;
 }
@@ -75,27 +80,28 @@ span.psw {
 
 <form action="/action_page.php">
   <div class="imgcontainer">
-    <img src="../mainpage/img/CU.png" alt="Avatar" class="avatar">
+      
+    <img src="../web/img/CU.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label><b>Username</b></label>
+    <label><b><font color="white">Username</font></b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
 
-    <label><b>Password</b></label>
+    <label><b><font color="white">Password</font></b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
         
     <button type="submit">Login</button>
-    <input type="checkbox" checked="checked"> Remember me
+    <input type="checkbox" checked="checked"> <font color="white">Remember me</font>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
     
-    <span class="psw">Forgot <a href="#">password?</a></span>
-    <a href="index.php" class="cancelbtn">Cancel</a>
+    <span class="psw">Forgot <a href="ForgotPassword.html">password?</a></span>
+    
+    <a href="mainpage.html" class="cancelbtn">Cancel</a>
   </div>
 </form>
 
 </body>
 </html>
-
