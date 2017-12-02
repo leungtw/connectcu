@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+
+<?php
+    require_once('php/functions.php');
+    $conn = sqlConnect();
+?>
+
 <style>
 
 form {
