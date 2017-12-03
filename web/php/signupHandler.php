@@ -5,7 +5,7 @@
 	$returnPage = $_POST['Return'];
 	$email = $_POST['email'];
 	$username = $_POST['username'];
-	$sql = "INSERT INTO users (username, email) VALUES ('$username', '$email');";
+	$sql = "INSERT INTO users (email, username) VALUES ('$email', '$username');";
 	
 	if ($conn->query($sql)===FALSE){
 		die('Error!');

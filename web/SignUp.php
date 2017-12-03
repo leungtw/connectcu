@@ -70,10 +70,10 @@ button {
 <form action="php/signupHandler.php" style="border:1px solid #ccc">
   <div class="container">
     <label><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input name="email" type="text" placeholder="Enter Email" required>
 
     <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+    <input name="username" type="text" placeholder="Enter Username" required>
 
 <!--
     <label><b>Password</b></label>
@@ -82,7 +82,7 @@ button {
     <label><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 -->
-    <input type="checkbox" checked="checked"> Remember me
+    <input type="checkbox" checked="checked"> Remember Me
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
