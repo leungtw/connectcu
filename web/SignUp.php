@@ -74,7 +74,7 @@ button {
 
     <label><b>Username</b></label>
     <input name="username" type="text" placeholder="Enter Username" required>
-
+</form>
 <!--
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
@@ -86,7 +86,6 @@ button {
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-</form>
     <button type="submit" class="signupbtn">Sign Up</button>
     <a href="index.php">
     <input type="button" class="cancelbtn" value="Cancel" />
