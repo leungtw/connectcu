@@ -3,7 +3,7 @@
 <style>
 
 body{
-    background-image: url(".img/Login.jpg");
+    background-image: url("img/Login.jpg");
 }
 
 form {
@@ -81,7 +81,7 @@ span.psw {
 <form action="/action_page.php">
   <div class="imgcontainer">
       
-    <img src=".img/CU.png" alt="Avatar" class="avatar">
+    <img src="img/CU.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
