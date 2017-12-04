@@ -49,6 +49,10 @@ button {
     padding: 16px;
 }
 
+.imgcontainer {
+    text-align: center;
+}
+
 /* Clear floats */
 .clearfix::after {
     content: "";
@@ -65,7 +69,10 @@ button {
 </style>
 <body>
 
+ <div class="imgcontainer">
+<img src="img/CU.png" alt="CU Boulder" class="avatar">
 <h2>Create your account</h2>
+</div>
 
 <form action="php/signupHandler.php" style="border:1px solid #ccc" method = "post">
   <div class="container">
