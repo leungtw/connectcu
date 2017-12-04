@@ -67,7 +67,7 @@ button {
 
 <h2>Create your account</h2>
 
-<form action="php/signupHandler.php" style="border:1px solid #ccc">
+<form action="php/signupHandler.php" style="border:1px solid #ccc" method = "post">
   <div class="container">
     <label><b>Email</b></label>
     <input name="email" type="text" placeholder="Enter Email" required>
@@ -92,7 +92,6 @@ button {
     </a>
     </div>
   </div>
-</form>
 
 </body>
 </html>
