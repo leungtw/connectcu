@@ -74,7 +74,6 @@ button {
 
     <label><b>Username</b></label>
     <input name="username" type="text" placeholder="Enter Username" required>
-</form>
 <!--
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
@@ -87,6 +86,7 @@ button {
 
     <div class="clearfix">
     <button type="submit" class="signupbtn">Sign Up</button>
+</form>
     <a href="index.php">
     <input type="button" class="cancelbtn" value="Cancel" />
     </a>
