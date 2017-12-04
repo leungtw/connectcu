@@ -99,7 +99,7 @@ span.psw {
     
     <span class="psw">Forgot <a href="ForgotPassword.html">password?</a></span>
     
-    <a href="mainpage.html" class="cancelbtn">Cancel</a>
+    <a href="index.php" class="cancelbtn">Cancel</a>
   </div>
 </form>
 
