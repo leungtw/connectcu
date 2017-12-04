@@ -77,7 +77,7 @@ button {
 <form action="php/signupHandler.php" style="border:1px solid #ccc" method = "post">
   <div class="container">
     <label><b>Email</b></label>
-    <input name="email" type="text" placeholder="Enter Email" required>
+    <input name="email" type="text" placeholder="Enter Email"  pattern = "/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" title = "Please enter a @colorado.edu email" required>
 
     <label><b>Username</b></label>
     <input name="username" type="text" placeholder="Enter Username" required>
