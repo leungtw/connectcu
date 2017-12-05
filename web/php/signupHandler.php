@@ -9,9 +9,9 @@
 	$duplicateUser = "SELECT username from users WHERE username = '$username';";
 	$duplicateEmail = "SELECT email from users WHERE email = '$email';";
 
-	if($duplicateEmail > 0){
+	if(mysql_num_rows($duplicateEmail) > 0){
 		echo "Email already exists!";
-	} elseif ($duplicateUser > 0) {
+	} elseif (mysql_num_rows($duplicateUser) > 0) {
 		echo "Username already exists!";
 	}
 	else{
