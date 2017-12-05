@@ -10,9 +10,9 @@
 	$duplicateEmail = "SELECT email from users WHERE email = '$email';";
 
 	if($duplicateEmail){
-		echo "Email already exists"
+		echo "Email already exists";
 	} elseif ($duplicateUser) {
-		echo "Username already exists"
+		echo "Username already exists";
 	}
 	else{
 		$sql = "INSERT INTO users (email, username) VALUES ('$email', '$username');";
