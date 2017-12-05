@@ -8,8 +8,8 @@
 
 	$duplicateUser = $mysqli->query("SELECT username FROM users WHERE username = '$username'");
 	$duplicateEmail = $mysqli->query("SELECT email FROM users WHERE email = '$email'");
-	echo duplicateEmail
-	echo $duplicateEmail
+	echo $duplicateEmail;
+	echo $duplicateEmail;
 
 	if(mysqli_num_rows($duplicateEmail) != 0){
 		echo "Email already exists!";
