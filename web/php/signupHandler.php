@@ -9,11 +9,14 @@
 	$duplicateUser = mysqli_query("SELECT username FROM users WHERE username = '$username' OR email = '$email'");
 	//$duplicateEmail = mysqli_query("SELECT email FROM users WHERE email = '$email'");
 
+	$email .=  "TestDup";
+	echo "ShellLab mysqli_num_rows : ".mysqli_num_rows($duplicateUser);
+
 	if(mysqli_num_rows($duplicateUser) > 0){
 		echo "User already exists!";
 	} 
 	else{
-		$sql = "INSERT INTO users (email, username) VALUES ('$email', '$username');";
+		$sql = "INSERT INTO users (email, username) VALUES ('$email' , '$username');";
 
 		if ($conn->query($sql)===FALSE){
 			die('Error!');
