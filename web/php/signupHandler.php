@@ -30,5 +30,5 @@
 		}
 	}
 	
-	//header("Location: ../$returnPage?msg=1");
+	header("Location: ../$returnPage?msg=1");
 ?>
