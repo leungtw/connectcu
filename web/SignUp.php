@@ -8,6 +8,10 @@
 
 <style>
 
+body{
+    background-image: url("img/Login.jpg");
+}
+
 form {
     border: 4px solid #cfb87c;
 }
