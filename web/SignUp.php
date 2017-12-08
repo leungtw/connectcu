@@ -81,13 +81,13 @@ button {
 
     <label><b>Username</b></label>
     <input name="username" type="text" placeholder="Enter Username" required>
-<!--
+
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
     <label><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
--->
+
     <input type="checkbox" checked="checked"> Remember Me
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
