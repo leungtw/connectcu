@@ -23,7 +23,7 @@
 		echo "User already exists!";
 	} 
 	else{
-		$sql = "INSERT INTO users (email, username, password) VALUES ('$email' , '$username', '$psw');";
+		$sql = "INSERT INTO users (email, username, password) VALUES ('$email' , '$username', '$password');";
 
 		if ($conn->query($sql)===FALSE){
 			die('Error!');
