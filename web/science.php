@@ -45,7 +45,7 @@
     <section id="questionbar">
       <div class="container">
         <h1> Ask a question </h1>
-        <form action="php/inputHandler.php" method="post">
+        <form action="php/questionHandler.php" method="post">
 			<input name="Subject" type="hidden" value="Science">
 			<input name="Question" id="txtInput" type="text" placeholder="Enter Question" required>
 			<input name="User" style="margin-top:4px;" id="txtInput" type="text" placeholder="Enter Your Name" required>
