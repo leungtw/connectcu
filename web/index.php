@@ -83,7 +83,7 @@
         <h1> Most Popular </h1>
 		<?php
 			//Queries questions table, then creates a block for each of the top 15 questions, and fills info
-			$sql = "SELECT * from questions q LEFT JOIN (SELECT message AS answer, user AS ansUser, question_id FROM answers) a ON q.id = a.question_id";
+			$sql = "SELECT * from questions q LEFT JOIN (SELECT message AS answer, user AS ansUser, question_id FROM answers) a ON q.id = a.question_id ORDER BY score DESC";
 			$result = $conn->query($sql);
 			
 			$array = array();
@@ -128,7 +128,7 @@
 							echo '
 							<form action="php/commentHandler.php" method="post" id="form1">
 								<input name="Message" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0" required>
-								<input name="User" type="hidden" value"'.$_SESSION['login_user'].'">
+								<input name="User" type="hidden" value="'.$_SESSION['login_user'].'">
 								<input name="Return" type="hidden" value="index.php">
 								<input name="Qid" type="hidden" value="'.$rows_for_id[0]['id'].'">
 								<input type="submit" class="button_1" value="Submit" style="width: 10%; margin: 10px 0 10px 0">
