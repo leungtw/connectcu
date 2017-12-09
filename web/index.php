@@ -32,7 +32,7 @@
 			<?php
 				if (isset($_SESSION['login_user'])){
 					echo '
-						<li class="button_2"> <a href="php/logout.php">Sign out</a> </li>
+						<li class="button_1"> <a href="php/logout.php">Sign out</a> </li>
 					';
 				} else {
 					echo '
