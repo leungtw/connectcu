@@ -2,6 +2,7 @@
 <html>
 	<?php
 		require_once('php/functions.php');
+		include('php/loginHandler.php');
 		$conn = sqlConnect();
 	?>
   <head>
@@ -28,8 +29,18 @@
             <li> <a href="computerscience.php"> Computer Science </a>  </li>
             <li> <a href="science.php"> Science </a>  </li>
             <li class="current"> <a href="english.php"> English </a>  </li>
-            <li class="button_1"> <a href="Login.php" >Login</a> </li>
-            <li class="button_1"> <a href="SignUp.php">Sign Up</a> </li>
+            <?php
+				if (isset($_SESSION['login_user'])){
+					echo '
+						<li class="button_1"> <a href="php/logout.php">Sign out</a> </li>
+					';
+				} else {
+					echo '
+						<li class="button_1"> <a href="Login.php" >Login</a> </li>
+						<li class="button_1"> <a href="SignUp.php">Sign Up</a> </li>
+					';
+				}
+			?>
           </ul>
         </nav>
       </div>
@@ -48,9 +59,17 @@
         <form action="php/questionHandler.php" method="post">
 			<input name="Subject" type="hidden" value="English">
 			<input name="Question" id="txtInput" type="text" placeholder="Enter Question" required>
-			<input name="User" style="margin-top:4px;" id="txtInput" type="text" placeholder="Enter Your Name" required>
-			<input class="button_1" type="submit" value="Submit Question"/>
-			<input name="Return" type="hidden" value="english.php">
+			<?php
+				if (isset($_SESSION['login_user'])){
+					echo '
+					  <input name="User" id="txtInput" type="hidden" value="'.$_SESSION['login_user'].'">
+					  <input class="button_1" type="submit" value="Submit Question"/>
+					  <input name="Return" type="hidden" value="index.php">';
+				} else {
+					echo '
+					  <input class="button_1" type="button" value="Login to Submit"/>';
+				}
+			  ?>
         </form>
       </div>
     </section>
@@ -99,213 +118,26 @@
 						
 						echo
 						'<h3> Answer This Question:</h3>
-						<div class="commentBar">
+						<div class="commentBar">';
+						if (isset($_SESSION['login_user'])){
+							echo '
 							<form action="php/commentHandler.php" method="post" id="form1">
 								<input name="Message" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0" required>
-								<input name="User" type="text" placeholder="Enter Your Name" style="width: 75%; margin: 0 0 5px 0" required>
+								<input name="User" type="hidden" value="'.$_SESSION['login_user'].'">
 								<input name="Return" type="hidden" value="english.php">
 								<input name="Qid" type="hidden" value="'.$rows_for_id[0]['id'].'">
 								<input type="submit" class="button_1" value="Submit" style="width: 10%; margin: 10px 0 10px 0">
-							</form>
+							</form>';
+						} else {
+							echo '<p>Log in to answer this question</p>';
+						}
+						echo '
 						</div>
 					  </div>
 					<p style="float:right">Asked by '.$rows_for_id[0]['user'].'</p>
 				</div>';
 			}
 		?>
-		<!--
-        <div class="container" id="container1">
-        <form>
-          <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="">
-          <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote1()">
-          <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote1()">
-          <input class="vote" type="text" id="txt1" value="0">
-        </form>
-          <button class="accordion" value=""><output id="ta1"></output> </button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form1" onsubmit="return false">
-              <div id="comments1">
-                <input id="txtInput" name="myInputs1[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments1)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container2">
-        <form>
-          <input class="subject" type="text" id="txtSubject2" readonly="readonly" value="">
-          <img class="up" id="up2" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote2()">
-          <img class="down" id="down2" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote2()">
-          <input class="vote" type="text" id="txt2" value="0">
-        </form>
-          <button class="accordion"><output id="ta2"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form2" onsubmit="return false">
-              <div id="comments2">
-                <input id="txtInput" name="myInputs2[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments2)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container3">
-        <form>
-          <input class="subject" type="text" id="txtSubject3" readonly="readonly" value="">
-          <img class="up" id="up3" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote3()">
-          <img class="down" id="down3" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote3()">
-          <input class="vote" type="text" id="txt3" value="0">
-        </form>
-          <button class="accordion"><output id="ta3"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form3" onsubmit="return false">
-              <div id="comments3">
-                <input id="txtInput" name="myInputs3[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments3)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container4">
-        <form>
-          <input class="subject" type="text" id="txtSubject4" readonly="readonly" value="">
-          <img class="up" id="up4" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote4()">
-          <img class="down" id="down4" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote4()">
-          <input class="vote" type="text" id="txt4" value="0">
-        </form>
-          <button class="accordion"><output id="ta4"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form4" onsubmit="return false">
-              <div id="comments4">
-                <input id="txtInput" name="myInputs4[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments4)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container5">
-        <form>
-          <input class="subject" type="text" id="txtSubject5" readonly="readonly" value="">
-          <img class="up" id="up5" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote5()">
-          <img class="down" id="down5" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote5()">
-          <input class="vote" type="text" id="txt5" value="0">
-        </form>
-          <button class="accordion"><output id="ta5"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form5" onsubmit="return false">
-              <div id="comments5">
-                <input id="txtInput" name="myInputs5[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments5)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container"6>
-        <form>
-          <input class="subject" type="text" id="txtSubject6" readonly="readonly" value="">
-          <img class="up" id="up6" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote6()">
-          <img class="down" id="down6" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote6()">
-          <input class="vote" type="text" id="txt6" value="0">
-        </form>
-          <button class="accordion"><output id="ta6"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form6" onsubmit="return false">
-              <div id="comments6">
-                <input id="txtInput" name="myInputs6[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments6)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container7">
-        <form>
-          <input class="subject" type="text" id="txtSubject7" readonly="readonly" value="">
-          <img class="up" id="up7" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote7()">
-          <img class="down" id="down7" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote7()">
-          <input class="vote" type="text" id="txt7" value="0">
-        </form>
-          <button class="accordion"><output id="ta7"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form7" onsubmit="return false">
-              <div id="comments7">
-                <input id="txtInput" name="myInputs7[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments7)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container8">
-        <form>
-          <input class="subject" type="text" id="txtSubject8" readonly="readonly" value="">
-          <img class="up" id="up8" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote8()">
-          <img class="down" id="down8" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote8()">
-          <input class="vote" type="text" id="txt8" value="0">
-        </form>
-          <button class="accordion"><output id="ta8"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form8" onsubmit="return false">
-              <div id="comments8">
-                <input id="txtInput" name="myInputs8[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments8)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container9">
-        <form>
-          <input class="subject" type="text" id="txtSubject9" readonly="readonly" value="">
-          <img class="up" id="up9" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote9()">
-          <img class="down" id="down9" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote9()">
-          <input class="vote" type="text" id="txt9" value="0">
-        </form>
-          <button class="accordion"><output id="ta9"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form9" onsubmit="return false">
-              <div id="comments9">
-                <input id="txtInput" name="myInputs9[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments9)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      <div class="container" id="container10">
-        <form>
-          <input class="subject" type="text" id="txtSubject10" readonly="readonly" value="">
-          <img class="up" id="up10" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote10()">
-          <img class="down" id="down10" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote10()">
-          <input class="vote" type="text" id="txt10" value="0">
-        </form>
-          <button class="accordion"><output id="ta10"></output></button>
-          <div class="panel">
-            <p>Answers and Comments</p>
-            <form id="form10" onsubmit="return false">
-              <div id="comments10">
-                <input id="txtInput" name="myInputs10[]" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0">
-              </div>
-                <button type="submit" class="button_1" onclick="return vAddComments(comments10)" style="width: 10%; margin: 10px 0 10px 0"> Submit </button>
-            </form>
-          </div>
-      </div>
-
-      </div>
-	  -->
     </section>
 
     <footer>

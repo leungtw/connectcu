@@ -14,7 +14,7 @@ function sqlConnect(){
 		$server = "localhost";
 		$username = "root";
 		$password = "";
-		$db = "ConnectCU";
+		$db = "connectcu";
 	}
 
 	$conn = new mysqli($server, $username, $password, $db);
