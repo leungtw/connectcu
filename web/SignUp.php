@@ -75,25 +75,25 @@ button {
 
  <div class="imgcontainer">
 <img src="img/CU.png" alt="CU Boulder" class="avatar">
-<h2>Create your account</h2>
+<h2><font color = "white">Create your account</font></h2>
 </div>
 
 <form action="php/signupHandler.php" style="border:1px solid #ccc" method = "post">
   <div class="container">
-    <label><b>Email</b></label>
+    <label><b><font color = "white">Email</font></b></label>
     <input name="email" type="text" placeholder="Enter Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title = "Enter a @colorado.edu email" required>
 
-    <label><b>Username</b></label>
+    <label><b><font color = "white">Username</font></b></label>
     <input name="username" type="text" placeholder="Enter Username" required>
 
-    <label><b>Password</b></label>
+    <label><b><font color = "white">Password</font></b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <label><b>Repeat Password</b></label>
+    <label><b><font color = "white">Repeat Password</font></b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-    <input type="checkbox" checked="checked"> Remember Me
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    <input type="checkbox" checked="checked"> <font color = "white">Remember Me</font>
+    <p><font color = "white">By creating an account you agree to our </font><a href="#">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
     <button type="submit" class="signupbtn">Sign Up</button>
