@@ -123,14 +123,20 @@
 						
 						echo
 						'<h3> Answer This Question:</h3>
-						<div class="commentBar">
+						<div class="commentBar">';
+						if (isset($_SESSION['login_user'])){
+							echo '
 							<form action="php/commentHandler.php" method="post" id="form1">
 								<input name="Message" type="text" placeholder="Enter Answer or Comment" style="width: 75%; margin: 0 0 5px 0" required>
-								<input name="User" type="text" placeholder="Enter Your Name" style="width: 75%; margin: 0 0 5px 0" required>
+								<input name="User" type="hidden" value"'.$_SESSION['login_user'].'">
 								<input name="Return" type="hidden" value="index.php">
 								<input name="Qid" type="hidden" value="'.$rows_for_id[0]['id'].'">
 								<input type="submit" class="button_1" value="Submit" style="width: 10%; margin: 10px 0 10px 0">
-							</form>
+							</form>';
+						} else {
+							echo '<p>Log in to answer this question</p>';
+						}
+						echo '
 						</div>
 					  </div>
 					<p style="float:right">Asked by '.$rows_for_id[0]['user'].'</p>
