@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <?php
-	require_once('php/functions.php')
-	$conn = sqlConnect();
+	include('php/loginHandler.php');
 ?>
 
 <style>
@@ -84,7 +82,7 @@ span.psw {
 
 
 
-<form action="/action_page.php">
+<form action="" method="post">
   <div class="imgcontainer">
       
     <img src="img/CU.png" alt="Avatar" class="avatar">
@@ -97,7 +95,7 @@ span.psw {
     <label><b><font color="white">Password</font></b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
         
-    <button type="submit">Login</button>
+    <input class="button_1" name="submit" type="submit" value="Login"/>
     <input type="checkbox" checked="checked"> <font color="white">Remember me</font>
   </div>
 
