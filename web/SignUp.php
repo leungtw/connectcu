@@ -39,6 +39,7 @@ button {
 /* Extra styles for the cancel button */
 .cancelbtn {
     padding: 14px 20px;
+    margin: 8px 0;
     background-color: #f44336;
 }
 
@@ -106,4 +107,3 @@ button {
 
 </body>
 </html>
-
