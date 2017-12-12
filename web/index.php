@@ -32,6 +32,7 @@
 			<?php
 				if (isset($_SESSION['login_user'])){
 					echo '
+						<li>' $_SESSION['login_user']' </li>
 						<li class="button_1"> <a href="php/logout.php">Sign out</a> </li>
 					';
 				} else {
