@@ -94,7 +94,7 @@ button {
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
     <input type="checkbox" checked="checked"> <font color = "white">Remember Me</font>
-    <p><font color = "white">By creating an account you agree to our </font><a href="#">Terms & Privacy</a>.</p>
+    <p><font color = "white">By creating an account you agree to our </font><a color="white" href="#">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
     <button type="submit" class="signupbtn">Sign Up</button>
