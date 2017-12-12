@@ -64,6 +64,7 @@ button {
     display: table;
 }
 
+
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
@@ -71,6 +72,11 @@ button {
     }
 }
 </style>
+
+<head>
+    <title>Sign Up</title>
+</head>
+
 <body>
 
  <div class="imgcontainer">
@@ -93,11 +99,16 @@ button {
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
     <input type="checkbox" checked="checked"> <font color = "white">Remember Me</font>
+
+<div class="container" style="background-color:#f1f1f1">
     <p><font color = "white">By creating an account you agree to our </font><a href="#">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
     <button type="submit" class="signupbtn">Sign Up</button>
 </form>
+
+</div>
+
     <a href="index.php">
     <input type="button" class="cancelbtn" value="Cancel" />
     </a>
