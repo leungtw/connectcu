@@ -93,7 +93,7 @@
 			
 			$questionCounter = 0;
 			foreach ($array as $id => $rows_for_id){
-				$voteBox = 'txt'.$questionCounter;
+				$voteBox = 'vote'.$questionCounter;
 				echo '
 				<div class="container" id="container1">
 					<form>
@@ -143,7 +143,7 @@
 					  </div>
 					<p style="float:right">Asked by '.$rows_for_id[0]['user'].'</p>
 				</div>';
-				$questioncounter += 1;
+				$questionCounter += 1;
 			}
 		?>
 
