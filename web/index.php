@@ -93,7 +93,7 @@
 			
 			$questionCounter = 0;
 			foreach ($array as $id => $rows_for_id){
-				$voteBox = 'txt'.$querstionCounter;
+				$voteBox = 'txt'.$questionCounter;
 				echo '
 				<div class="container" id="container1">
 					<form>
