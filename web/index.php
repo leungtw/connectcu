@@ -174,7 +174,6 @@ for (i = 0; i < acc.length; i++) {
 
 function callUpVoter(questionID, voteID){
 
-	alert(voteID);
 	strNumber = document.getElementById(voteID).value;
     iNumber = Number(strNumber);
     iNumber += 1;
@@ -191,7 +190,7 @@ function callDownVoter(questionID, voteID){
 
 	strNumber = document.getElementById(voteID).value;
     iNumber = Number(strNumber);
-    iNumber += 1;
+    iNumber -= 1;
     document.getElementById(voteID).value = String(iNumber);
 
 	$.ajax({
