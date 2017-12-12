@@ -96,8 +96,8 @@
 				<div class="container" id="container1">
 					<form>
 					  <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="'.$rows_for_id[0]['subject'].'">
-					  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="vUpVote1()">
-					  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="vDownVote1()">
+					  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="callUpVoter('.$rows_for_id[0]['id'].')">
+					  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="callDownVoter('.$rows_for_id[0]['id'].')">
 					  <input class="vote" type="text" id="txt1" value="'.$rows_for_id[0]['score'].'" readonly>
 					</form>
 					  <button class="accordion" value=""><output id="">'.$rows_for_id[0]['message'].'</output> </button>
@@ -167,6 +167,22 @@ for (i = 0; i < acc.length; i++) {
             panel.style.display = "block";
         }
     }
+}
+
+function callUpVoter(questionID){
+	$.ajax({
+		type: "POST",
+		url: 'php/voteHandler.php',
+		data:{action:'upvote', id:questionID}
+	});
+}
+
+function callDownVoter(questionID){
+	$.ajax({
+		type: "POST",
+		url: 'php/voteHandler.php',
+		data:{action:'downvote', id:questionID}
+	});
 }
 </script>
 
