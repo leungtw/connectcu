@@ -86,14 +86,16 @@
 				$array[$row['id']][] = $row;
 			}
 			
+			$questionCounter = 0;
 			foreach ($array as $id => $rows_for_id){
+				$voteBox = 'vote'.$questionCounter;
 				echo '
 				<div class="container" id="container1">
 					<form>
 					  <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="'.$rows_for_id[0]['subject'].'">
-					  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="callUpVoter('.$rows_for_id[0]['id'].')">
-					  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="callDownVoter('.$rows_for_id[0]['id'].')">
-					  <input class="vote" type="text" id="txt1" value="'.$rows_for_id[0]['score'].'" readonly>
+					  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="callUpVoter('.$rows_for_id[0]['id'].', \''.$voteBox.'\')">
+					  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="callDownVoter('.$rows_for_id[0]['id'].', \''.$voteBox.'\')">
+					  <input class="vote" type="text" id="'.$voteBox.'" value="'.$rows_for_id[0]['score'].'" readonly>
 					</form>
 					  <button class="accordion" value=""><output id="">'.$rows_for_id[0]['message'].'</output> </button>
 					  <div class="panel">
@@ -136,6 +138,7 @@
 					  </div>
 					<p style="float:right">Asked by '.$rows_for_id[0]['user'].'</p>
 				</div>';
+				$questionCounter += 1;
 			}
 		?>
     </section>
@@ -162,7 +165,13 @@
         }
     }
 	
-	function callUpVoter(questionID){
+	function callUpVoter(questionID, voteID){
+
+		strNumber = document.getElementById(voteID).value;
+		iNumber = Number(strNumber);
+		iNumber += 1;
+		document.getElementById(voteID).value = String(iNumber);
+
 		$.ajax({
 			type: "POST",
 			url: 'php/voteHandler.php',
@@ -170,7 +179,13 @@
 		});
 	}
 
-	function callDownVoter(questionID){
+	function callDownVoter(questionID, voteID){
+
+		strNumber = document.getElementById(voteID).value;
+		iNumber = Number(strNumber);
+		iNumber -= 1;
+		document.getElementById(voteID).value = String(iNumber);
+
 		$.ajax({
 			type: "POST",
 			url: 'php/voteHandler.php',
