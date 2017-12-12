@@ -98,8 +98,8 @@
 				<div class="container" id="container1">
 					<form>
 					  <input class="subject" type="text" id="txtSubject1" readonly="readonly" value="'.$rows_for_id[0]['subject'].'">
-					  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="callUpVoter('.$rows_for_id[0]['id'].', '.$voteBox.')">
-					  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="callDownVoter('.$rows_for_id[0]['id'].', '.$voteBox.')">
+					  <img class="up" id="up1" src="./img/uparrow.png" alt="Up Arrow" height="20" width="20" onclick="callUpVoter('.$rows_for_id[0]['id'].', "'.$voteBox.'")">
+					  <img class="down" id="down1" src="./img/downarrow.png" alt="Up Arrow" height="20" width="20" onclick="callDownVoter('.$rows_for_id[0]['id'].', "'.$voteBox.'")">
 					  <input class="vote" type="text" id="'.$voteBox.'" value="'.$rows_for_id[0]['score'].'" readonly>
 					</form>
 					  <button class="accordion" value=""><output id="">'.$rows_for_id[0]['message'].'</output> </button>
@@ -172,7 +172,7 @@ for (i = 0; i < acc.length; i++) {
     }
 }
 
-window.onload = function callUpVoter(questionID, voteID){
+function callUpVoter(questionID, voteID){
 
 	alert(voteID);
 	strNumber = document.getElementById(voteID).value;
@@ -187,7 +187,7 @@ window.onload = function callUpVoter(questionID, voteID){
 	});
 }
 
-window.onload = function callDownVoter(questionID, voteID){
+function callDownVoter(questionID, voteID){
 
 	strNumber = document.getElementById(voteID).value;
     iNumber = Number(strNumber);
