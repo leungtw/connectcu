@@ -174,10 +174,10 @@ for (i = 0; i < acc.length; i++) {
 
 function callUpVoter(questionID, voteID){
 
-	strNumber = document.getElementById('voteID').value;
+	strNumber = document.getElementById(voteID).value;
     iNumber = Number(strNumber);
     iNumber += 1;
-    document.getElementById('voteID').value = String(iNumber);
+    document.getElementById(voteID).value = String(iNumber);
 
 	$.ajax({
 		type: "POST",
@@ -188,10 +188,10 @@ function callUpVoter(questionID, voteID){
 
 function callDownVoter(questionID, voteID){
 
-	strNumber = document.getElementById('voteID').value;
+	strNumber = document.getElementById(voteID).value;
     iNumber = Number(strNumber);
     iNumber += 1;
-    document.getElementById('voteID').value = String(iNumber);
+    document.getElementById(voteID).value = String(iNumber);
 
 	$.ajax({
 		type: "POST",
