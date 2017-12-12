@@ -1,7 +1,7 @@
 <?php
 
 function sqlConnect(){
-	$connectLocally = true; //change to false before deploying to heroku
+	$connectLocally = false; //change to false before deploying to heroku
 	if (!$connectLocally){
 		// INFO FOR CONNECTING OVER HEROKU (For deploying)
 		$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
