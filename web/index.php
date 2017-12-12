@@ -172,7 +172,7 @@ for (i = 0; i < acc.length; i++) {
     }
 }
 
-function callUpVoter(questionID, voteID){
+window.onload = function callUpVoter(questionID, voteID){
 
 	alert(voteID);
 	strNumber = document.getElementById(voteID).value;
@@ -187,7 +187,7 @@ function callUpVoter(questionID, voteID){
 	});
 }
 
-function callDownVoter(questionID, voteID){
+window.onload = function callDownVoter(questionID, voteID){
 
 	strNumber = document.getElementById(voteID).value;
     iNumber = Number(strNumber);
