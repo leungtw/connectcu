@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
+<?php
+	include('php/loginHandler.php');
+?>
+
 <style>
 
 body{
-    background-image: url("../mainpage/img/Login.jpg");
+    background-image: url("img/Login.jpg");
 }
 
 form {
@@ -74,14 +78,21 @@ span.psw {
     }
 }
 </style>
+
+
+<head>
+    <title>Login</title>
+</head>
+
 <body>
 
 
 
-<form action="/action_page.php">
+<form action="" method="post">
   <div class="imgcontainer">
       
-    <img src="../mainpage/img/CU.png" alt="Avatar" class="avatar">
+    <img src="img/CU.png" alt="Avatar" class="avatar">
+
   </div>
 
   <div class="container">
@@ -91,18 +102,17 @@ span.psw {
     <label><b><font color="white">Password</font></b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
         
-    <button type="submit">Login</button>
+    <input class="button_1" name="submit" type="submit" value="Login"/>
     <input type="checkbox" checked="checked"> <font color="white">Remember me</font>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
     
     <span class="psw">Forgot <a href="ForgotPassword.html">password?</a></span>
-    
-    <a href="mainpage.html" class="cancelbtn">Cancel</a>
+
+    <a href="index.php" class="cancelbtn">Cancel</a>
   </div>
 </form>
 
 </body>
 </html>
-
